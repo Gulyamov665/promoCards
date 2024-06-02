@@ -36,3 +36,9 @@ def create_schoolhouse_record(schoolhouse: SchoolHouseCreate, db: Session = Depe
 @app.get('/schoolhouses/', response_model=List[SchoolHouse])
 def get_all_schoolhouses(db: Session = Depends(get_db)):
     return fetch_all_schoolhouses(db)
+
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000, log_level='info')
